@@ -8,6 +8,7 @@
  * @y: address of second value
  * Retrun: void
 */
+
 void swap_val(int *array, size_t size, int *x, int *y)
 {
 	if (*x != *y)
@@ -18,6 +19,7 @@ void swap_val(int *array, size_t size, int *x, int *y)
 		print_array(array, size);
 	}
 }
+
 /**
  * lomuto_partition - partition the array
  * @array: array of elements
@@ -27,6 +29,7 @@ void swap_val(int *array, size_t size, int *x, int *y)
  * Return: size_t
  *
 */
+
 size_t lomuto_partition(int *array, size_t size,
 	       ssize_t low_no, ssize_t high_no)
 {
@@ -48,6 +51,7 @@ size_t lomuto_partition(int *array, size_t size,
  * @high_no: the highest index in array
  * Return: void
 */
+
 void quicksort(int *array, size_t size, ssize_t low_no, ssize_t high_no)
 {
 	if (low_no < high_no)
@@ -65,6 +69,7 @@ void quicksort(int *array, size_t size, ssize_t low_no, ssize_t high_no)
  * @size: size of array
  * Return: void
 */
+
 void quick_sort(int *array, size_t size)
 {
 	if (!array || !size)
