@@ -4,18 +4,18 @@
  * swap_val - swap elements of array
  * @array: array of elements
  * @size: size of array
- * @x: address of first value
- * @y: address of second value
+ * @xp: address of first value
+ * @yp: address of second value
  * Retrun: void
 */
 
-void swap_val(int *array, size_t size, int *x, int *y)
+void swap_val(int *array, size_t size, int *xp, int *yp)
 {
-	if (*x != *y)
+	if (*xp != *yp)
 	{
-		*x = *x + *y;
-		*y = *x - *y;
-		*x = *x - *y;
+		int *temp = *xp;
+		*xp = *yp;
+		*yp = *temp;
 		print_array(array, size);
 	}
 }
