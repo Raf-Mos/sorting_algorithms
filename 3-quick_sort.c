@@ -13,9 +13,9 @@ void swap_val(int *array, size_t size, int *xp, int *yp)
 {
 	if (*xp != *yp)
 	{
-		int *temp = *xp;
-		*xp = *yp;
-		*yp = *temp;
+		*xp = *xp + *yp;
+		*yp = *xp - *yp;
+		*xp = *xp - *yp;
 		print_array(array, size);
 	}
 }
