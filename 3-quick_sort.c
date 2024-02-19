@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- * swap - swap elements of array
+ * swap_val - swap elements of array
  * @array: array of elements
  * @size: size of array
  * @x: address of first value
