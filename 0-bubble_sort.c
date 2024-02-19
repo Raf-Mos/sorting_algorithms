@@ -6,7 +6,6 @@
  * @xp: input
  * @yp: input
  * Return: void
- *
 */
 
 void swap(int *xp, int *yp)
@@ -18,7 +17,7 @@ void swap(int *xp, int *yp)
 
 /**
  * bubble_sort - that sorts an array of integers in ascending order
- * @arr: array of elements
+ * @array: array of elements
  * @size: size of array
  * Return: void
 */
