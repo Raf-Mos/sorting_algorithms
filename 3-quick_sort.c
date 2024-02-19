@@ -8,7 +8,7 @@
  * @y: address of second value
  * Retrun: void
 */
-void swap(int *array, size_t size, int *x, int *y)
+void swap_val(int *array, size_t size, int *x, int *y)
 {
 	if (*x != *y)
 	{
@@ -34,8 +34,8 @@ size_t lomuto_partition(int *array, size_t size,
 
 	for (i = j = low_no; j < high_no; j++)
 		if (array[j] < pivot)
-			swap(array, size, &array[j], &array[i++]);
-	swap(array, size, &array[i], &array[high_no]);
+			swap_val(array, size, &array[j], &array[i++]);
+	swap_val(array, size, &array[i], &array[high_no]);
 
 	return (i);
 }
