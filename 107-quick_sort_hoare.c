@@ -1,6 +1,20 @@
 #include "sort.h"
 
 /**
+ * swap_elements - Swap two integers in an array.
+ * @x: The first integer to swap.
+ * @y: The second integer to swap.
+ */
+void swap_elements(int *x, int *y)
+{
+	int temp;
+
+	temp = *x;
+	*x = *y;
+	*y = temp;
+}
+
+/**
  * partition - Order a subset of an array of integers
  *             according to the partition scheme.
  * @array: The array of integers.
@@ -22,11 +36,9 @@ int partition(int *array, size_t size, int l, int r)
 		while (array[j] > pivot)
 			j--;
 
-		if (i < j && array[i] != array[j])
+		if (i < j)
 		{
-			tmp = array[j];
-			array[j] = array[i];
-			array[i] = tmp;
+			swap_elements(array + i, array + j);
 			print_array(array, size);
 		}
 	}
@@ -66,3 +78,4 @@ void hoare_quicksort(int *array, size_t size)
 
 	sort_hoare(array, size, 0, size - 1);
 }
+
