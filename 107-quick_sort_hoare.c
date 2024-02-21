@@ -66,16 +66,15 @@ void sort_hoare(int *array, size_t size, int l, int r)
 }
 
 /**
- * hoare_quicksort - Sort an array of integers in ascending
+ * quick_sort_hoare - Sort an array of integers in ascending
  *             order using the quicksort algorithm.
  * @array: An array of integers.
  * @size: The size of the array.
  */
-void hoare_quicksort(int *array, size_t size)
+void quick_sort_hoare(int *array, size_t size)
 {
 	if (array == NULL || size < 2)
 		return;
 
 	sort_hoare(array, size, 0, size - 1);
 }
-
