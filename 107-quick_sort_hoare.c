@@ -7,11 +7,11 @@
  */
 void swap_elements(int *x, int *y)
 {
-    int temp;
+	int temp;
 
-    temp = *x;
-    *x = *y;
-    *y = temp;
+	temp = *x;
+	*x = *y;
+	*y = temp;
 }
 
 /**
@@ -26,26 +26,26 @@ void swap_elements(int *x, int *y)
  */
 int partition(int *array, size_t size, int l, int r)
 {
-    int pivot, i, j;
+	int pivot, i, j;
 
-    pivot = array[r];
-    for (i = l - 1, j = r + 1; i < j;)
-    {
-        do {
-            i++;
-        } while (array[i] < pivot);
-        do {
-            j--;
-        } while (array[j] > pivot);
+	pivot = array[r];
+	for (i = l - 1, j = r + 1; i < j;)
+	{
+		do {
+			i++;
+		} while (array[i] < pivot);
+		do {
+			j--;
+		} while (array[j] > pivot);
 
-        if (i < j)
-        {
-            swap_elements(array + i, array + j);
-            print_array(array, size);
-        }
-    }
+		if (i < j)
+		{
+			swap_elements(array + i, array + j);
+			print_array(array, size);
+		}
+	}
 
-    return (i);
+	return (i);
 }
 
 /**
@@ -57,14 +57,14 @@ int partition(int *array, size_t size, int l, int r)
  */
 void sort_hoare(int *array, size_t size, int l, int r)
 {
-    int divide;
+	int divide;
 
-    if (r - l > 0)
-    {
-        divide = partition(array, size, l, r);
-        sort_hoare(array, size, l, divide - 1);
-        sort_hoare(array, size, divide, r);
-    }
+	if (r - l > 0)
+	{
+		divide = partition(array, size, l, r);
+		sort_hoare(array, size, l, divide - 1);
+		sort_hoare(array, size, divide, r);
+	}
 }
 
 /**
@@ -75,8 +75,8 @@ void sort_hoare(int *array, size_t size, int l, int r)
  */
 void quick_sort_hoare(int *array, size_t size)
 {
-    if (array == NULL || size < 2)
-        return;
+	if (array == NULL || size < 2)
+		return;
 
-    sort_hoare(array, size, 0, size - 1);
+	sort_hoare(array, size, 0, size - 1);
 }
