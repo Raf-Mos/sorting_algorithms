@@ -34,5 +34,7 @@ int partition(int *array, size_t size, int l, int r);
 void sort_hoare(int *array, size_t size, int l, int r);
 void quick_sort_hoare(int *array, size_t size);
 void shell_sort(int *array, size_t size);
+void heapify(int *array, size_t size, size_t base, size_t root);
+void heap_sort(int *array, size_t size);
 
 #endif
