@@ -12,26 +12,26 @@
  */
 int partition(int *array, size_t size, int l, int r)
 {
-    int pivot, i = l, j = r;
+	int tmp, pivot, i = l, j = r;
 
-    pivot = array[r];
-    while (i < j)
-    {
-        while (array[i] < pivot)
-            i++;
-        while (array[j] > pivot)
-            j--;
+	pivot = array[r];
+	while (i < j)
+	{
+		while (array[i] < pivot)
+			i++;
+		while (array[j] > pivot)
+			j--;
 
-        if (i < j && array[i] != array[j])
-        {
-            tmp = array[j];
-            array[j] = array[i];
-            array[i] = tmp;
-            print_array(array, size);
-        }
-    }
+		if (i < j && array[i] != array[j])
+		{
+			tmp = array[j];
+			array[j] = array[i];
+			array[i] = tmp;
+			print_array(array, size);
+		}
+	}
 
-    return (i);
+	return (i);
 }
 
 /**
@@ -43,26 +43,26 @@ int partition(int *array, size_t size, int l, int r)
  */
 void sort_hoare(int *array, size_t size, int l, int r)
 {
-    int divide;
+	int divide;
 
-    if (r - l > 0)
-    {
-        divide = partition(array, size, l, r);
-        sort_hoare(array, size, l, divide - 1);
-        sort_hoare(array, size, divide, r);
-    }
+	if (r - l > 0)
+	{
+		divide = partition(array, size, l, r);
+		sort_hoare(array, size, l, divide - 1);
+		sort_hoare(array, size, divide, r);
+	}
 }
 
 /**
- * quicksort - Sort an array of integers in ascending
+ * hoare_quicksort - Sort an array of integers in ascending
  *             order using the quicksort algorithm.
  * @array: An array of integers.
  * @size: The size of the array.
  */
-void quicksort(int *array, size_t size)
+void hoare_quicksort(int *array, size_t size)
 {
-    if (array == NULL || size < 2)
-        return;
+	if (array == NULL || size < 2)
+		return;
 
-    sort_hoare(array, size, 0, size - 1);
+	sort_hoare(array, size, 0, size - 1);
 }

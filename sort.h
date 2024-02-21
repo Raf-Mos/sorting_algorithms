@@ -32,6 +32,6 @@ size_t lomuto_partition(int *array, size_t size,
 void quicksort(int *array, size_t size, ssize_t low_no, ssize_t high_no);
 int partition(int *array, size_t size, int l, int r);
 void sort_hoare(int *array, size_t size, int l, int r);
-void quicksort(int *array, size_t size);
+void hoare_quicksort(int *array, size_t size);
 
 #endif
